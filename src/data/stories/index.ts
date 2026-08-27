@@ -1,6 +1,9 @@
 import type { Story } from '../../types/story';
 
-export const storyLibrary: Story[] = [
+import { ahardaanStory } from './ahardaan';
+
+export const storyLibrary: Story[] = [ahardaanStory];
+/*
   {
     id: 'queen-chelna-and-king-shrenik',
     title: 'QUEEN CHELNA AND KING SHRENIK Story',
@@ -63,10 +66,44 @@ The monk did not distinguish between the king who had caused him pain, and the q
             difficulty: 'easy',
             explanation: 'The story says Queen Chelna cleaned Yamadhar’s wounds and applied sandalwood paste.',
           },
+          {
+            id: 'q5', question: 'Who ruled Vaishali at the time of the story?', options: ['King Chetak', 'King Shrenik', 'Yamadhar', 'Bharat'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says King Chetak was the ruler of Vaishali.'
+          },
+          {
+            id: 'q6', question: 'What did artist Bharat paint?', options: ['A picture of Chelna', 'A picture of Yamadhar', 'A picture of Vaishali', 'A picture of the hunting dogs'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says Bharat painted a picture of Chelna and showed it to King Shrenik.'
+          },
+          {
+            id: 'q7', question: 'Where was King Shrenik the king?', options: ['Vaishali', 'Magadh', 'Simvak', 'Bhogavati'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story identifies Shrenik as the king of Magadh.'
+          },
+          {
+            id: 'q8', question: 'What kind of trip did King Shrenik take?', options: ['A hunting trip', 'A pilgrimage', 'A trading trip', 'A journey to Vaishali'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says King Shrenik went on a hunting trip.'
+          },
+          {
+            id: 'q9', question: 'What was Yamadhar doing when Shrenik saw him?', options: ['Teaching in a village', 'Engaged in deep meditation', 'Preparing food', 'Traveling to Magadh'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says Yamadhar was engaged in deep meditation.'
+          },
+          {
+            id: 'q10', question: 'What happened to Shrenik’s arrows?', options: ['They hit Yamadhar', 'They kept missing Yamadhar', 'They turned into flowers', 'They were taken by the dogs'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says the arrows kept missing Yamadhar.'
+          },
+          {
+            id: 'q11', question: 'Who took Shrenik back to Yamadhar’s meditation spot?', options: ['Bharat', 'Queen Chelna', 'King Chetak', 'The hunter'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The queen felt sorry and took the king back to Yamadhar’s meditation spot.'
+          },
+          {
+            id: 'q12', question: 'What crawled over Yamadhar’s body?', options: ['Ants and other insects', 'Birds and deer', 'Dogs and horses', 'Fish and snakes only'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says ants and other insects crawled all over the monk’s body.'
+          },
+          {
+            id: 'q13', question: 'What did Yamadhar do after opening his eyes?', options: ['He blessed both of them', 'He left the forest', 'He spoke angrily', 'He called the hunter'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says Yamadhar opened his eyes and blessed the king and queen.'
+          },
+          {
+            id: 'q14', question: 'Who became devoted members of Bhagawan Mahavir’s order?', options: ['Shrenik and Chelna', 'Bharat and Chetak', 'Yamadhar and Bharat', 'The hunter and the dogs'], correctAnswer: 0, marks: 2, difficulty: 'medium', explanation: 'The story concludes that King Shrenik and Queen Chelna became devoted members of Bhagawan Mahavir’s order.'
+          },
+          {
+            id: 'q15', question: 'What quality did Yamadhar show by treating the king and queen alike?', options: ['Attachment and aversion', 'Freedom from attachment and aversion', 'Anger and fear', 'Pride and ambition'], correctAnswer: 1, marks: 2, difficulty: 'medium', explanation: 'The story says Yamadhar did not distinguish between the king who caused pain and the queen who alleviated it.'
+          },
         ],
       },
     ],
   },
+  /*
   {
     id: 'gautam-swami-story',
     title: 'Gautam Swami Story',
@@ -144,6 +181,9 @@ Gautamswämi taught and spread Jain principles for next twelve years. He attaine
       },
     ],
   },
+  */
+/*
+  ahardaanStory,
   {
     id: 'thrithankar-mahavir-story',
     title: 'Thrithankar Mahavir Story',
@@ -303,11 +343,45 @@ In the end, at the age of seventy-two, on the Dipawali day, the last Tirthankar 
             difficulty: 'medium',
             explanation: 'The story says Mahavir spent twelve years in penance and attained omniscience at the age of forty-two.',
           },
+          {
+            id: 'q5', question: 'How many Tirthankaras were there in one epoch and Bharatkshetra?', options: ['Twelve', 'Twenty-four', 'Forty-two', 'Seventy-two'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says Tirthankaras in one epoch and in Bharatkshetra are twenty-four only.'
+          },
+          {
+            id: 'q6', question: 'What did Mahavir conquer to become a God?', options: ['His kingdom', 'Himself', 'The forest', 'The Samavasarana'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says Mahaveer became a God when he conquered himself.'
+          },
+          {
+            id: 'q7', question: 'How many years did Mahavir spend pursuing the supreme soul in the jungles?', options: ['Twelve years', 'Thirty years', 'Forty-two years', 'Seventy-two years'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says Mahavir spent the next twelve years in the jungles in deep meditation.'
+          },
+          {
+            id: 'q8', question: 'What was the festival of Mahavir’s birth called?', options: ['Veer Shasan Jayanti', 'Janma Kalyanak Mahotsava', 'Deepawali', 'Sarvodaya Tirtha'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says the festival of his birth is called Janma Kalyanak Mahotsava.'
+          },
+          {
+            id: 'q9', question: 'How many dreams did Queen Trishala see?', options: ['Four', 'Ten', 'Sixteen', 'Twenty-four'], correctAnswer: 2, marks: 1, difficulty: 'easy', explanation: 'The story lists the sixteen dreams seen by mother Trishala.'
+          },
+          {
+            id: 'q10', question: 'What name was Mahavir also known by during childhood?', options: ['Veer and Ativeer', 'Suvrat and Yamadhar', 'Chetak and Shrenik', 'Dhanya and Ahamidra'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says Mahavir was known as Veer and Ativeer since childhood.'
+          },
+          {
+            id: 'q11', question: 'What did Mahavir control in the city?', options: ['A black snake', 'An elephant', 'A tiger', 'A herd of cows'], correctAnswer: 1, marks: 1, difficulty: 'easy', explanation: 'The story says Prince Vardhman controlled an elephant that had become mad.'
+          },
+          {
+            id: 'q12', question: 'What did Mahavir do in his thirtieth year?', options: ['He left home', 'He became a king', 'He built the Samavasarana', 'He met Gautam Swami'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says Mahavir left his home in the thirtieth year of his youth.'
+          },
+          {
+            id: 'q13', question: 'What did the cruel forest animals do after seeing Mahavir’s non-violent life?', options: ['They became friends', 'They attacked the city', 'They left the forest', 'They followed the king'], correctAnswer: 0, marks: 1, difficulty: 'easy', explanation: 'The story says the animals forgot their natural enmity and became friends.'
+          },
+          {
+            id: 'q14', question: 'What did Mahavir’s teachings uphold?', options: ['The independence of the soul', 'The power of kings', 'Animal sacrifice', 'The separation of the rich and poor'], correctAnswer: 0, marks: 2, difficulty: 'medium', explanation: 'The story says Mahavir upheld the independence of the soul and all other substances.'
+          },
+          {
+            id: 'q15', question: 'Who attained omniscience on the same day Mahavir attained Nirvana?', options: ['King Siddhartha', 'Indrabhuti Gautam', 'King Chetak', 'Seth Chanpal'], correctAnswer: 1, marks: 2, difficulty: 'medium', explanation: 'The story says Mahavir’s chief disciple Indrabhuti Gautam achieved omniscience on the same day.'
+          },
         ],
       },
     ],
   },
 ];
+*/
 
 export const getStoryById = (storyId: string) => storyLibrary.find((story) => story.id === storyId) ?? null;
 export const allStories = storyLibrary;

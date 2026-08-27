@@ -25,8 +25,8 @@ function ProtectedRoute({ isSignedIn, children }: ProtectedRouteProps) {
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>(getTheme());
-  const [storageState, setStorageState] = useState(loadStorage());
   const [user, setUser] = useState(loadAuthUser());
+  const [storageState, setStorageState] = useState(() => loadStorage(user?.username));
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
@@ -35,8 +35,8 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    setStorageState(loadStorage());
-  }, [theme]);
+    setStorageState(loadStorage(user?.username));
+  }, [theme, user]);
 
   const saveAttempt = (storyId: string, result: StoryResult) => {
     const attempt: QuizAttempt = {
@@ -53,10 +53,10 @@ function App() {
       answers: result.answers,
     };
 
-    addAttempt(attempt);
-    setBestScore(storyId, result.score);
-    completeStory(storyId);
-    setStorageState(loadStorage());
+    addAttempt(attempt, user?.username);
+    setBestScore(storyId, result.score, user?.username);
+    completeStory(storyId, user?.username);
+    setStorageState(loadStorage(user?.username));
   };
 
   const handleSubmitQuiz = (storyId: string, answers: Record<string, number | null>, durationSeconds: number) => {
@@ -76,7 +76,7 @@ function App() {
       score: result.score,
       totalMarks: result.totalMarks,
       percentage: result.percentage,
-    });
+    }, user?.username);
   };
 
   return (
@@ -87,6 +87,7 @@ function App() {
         onSignOut={() => {
           signOut();
           setUser(null);
+            setStorageState(loadStorage());
         }}
         onToggleTheme={() => setTheme((current) => (current === 'dark' ? 'light' : 'dark'))}
       >
@@ -97,7 +98,7 @@ function App() {
             path="/signin"
             element={user ? <Navigate to="/dashboard" replace /> : <SignInPage onSignedIn={(nextUser) => { signIn(nextUser); setUser(nextUser); }} />}
           />
-          <Route path="/story/:storyId" element={<StoryReaderPage stories={allStories} storage={storageState} isSignedIn={Boolean(user)} onSubmitQuiz={handleSubmitQuiz} />} />
+          <Route path="/story/:storyId" element={<StoryReaderPage stories={allStories} storage={storageState} username={user?.username} isSignedIn={Boolean(user)} onSubmitQuiz={handleSubmitQuiz} />} />
           <Route path="/results/:storyId" element={<ProtectedRoute isSignedIn={Boolean(user)}><ResultsPage stories={allStories} storage={storageState} /></ProtectedRoute>} />
           <Route path="/dashboard" element={<ProtectedRoute isSignedIn={Boolean(user)}><DashboardPage storage={storageState} stories={allStories} /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/" replace />} />

@@ -6,16 +6,18 @@ import { updateProgress } from '../utils/storage';
 interface StoryReaderPageProps {
   stories: Story[];
   storage: any;
+  username?: string;
   isSignedIn: boolean;
   onSubmitQuiz: (storyId: string, answers: Record<string, number | null>, durationSeconds: number) => void;
 }
 
-export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmitQuiz }: StoryReaderPageProps) {
+export default function StoryReaderPage({ stories, storage, username, isSignedIn, onSubmitQuiz }: StoryReaderPageProps) {
   const { storyId } = useParams();
   const navigate = useNavigate();
   const story = stories.find((item) => item.id === storyId) ?? null;
   const [selectedAnswers, setSelectedAnswers] = useState<Record<string, number | null>>({});
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [language, setLanguage] = useState<'english' | 'hindi'>('english');
   const [startedAt] = useState(Date.now());
 
   useEffect(() => {
@@ -40,8 +42,8 @@ export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmit
       score: 0,
       totalMarks: 0,
       percentage: 0,
-    });
-  }, [currentSectionIndex, isSignedIn, selectedAnswers, story, startedAt]);
+    }, username);
+  }, [currentSectionIndex, isSignedIn, selectedAnswers, story, startedAt, username]);
 
   if (!story) {
     return <div className="rounded-3xl bg-white p-8 text-center dark:bg-slate-900">Story not found.</div>;
@@ -49,6 +51,9 @@ export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmit
 
   const allQuestions = story.sections.flatMap((section) => section.questions);
   const currentSection = story.sections[currentSectionIndex];
+  const currentPassage = language === 'hindi' && currentSection.passageHindi
+    ? currentSection.passageHindi
+    : currentSection.passage;
   const answeredCount = Object.values(selectedAnswers).filter((answer) => answer !== null && answer !== undefined).length;
   const percentProgress = (currentSectionIndex / story.sections.length) * 100;
 
@@ -92,8 +97,30 @@ export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmit
 
       <div className="grid gap-6 lg:grid-cols-[1.3fr_0.7fr]">
         <article className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-          <h2 className="text-xl font-semibold text-slate-800 dark:text-white">{currentSection.title}</h2>
-          <p className="mt-5 whitespace-pre-line text-base leading-8 text-slate-700 dark:text-slate-200">{currentSection.passage}</p>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <h2 className="text-xl font-semibold text-slate-800 dark:text-white">{currentSection.title}</h2>
+            {currentSection.passageHindi && (
+              <div className="inline-flex rounded-xl border border-slate-200 p-1 dark:border-slate-700" role="group" aria-label="Story language">
+                <button
+                  type="button"
+                  onClick={() => setLanguage('english')}
+                  aria-pressed={language === 'english'}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${language === 'english' ? 'bg-emerald-600 text-white' : 'text-slate-600 dark:text-slate-300'}`}
+                >
+                  English
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setLanguage('hindi')}
+                  aria-pressed={language === 'hindi'}
+                  className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${language === 'hindi' ? 'bg-emerald-600 text-white' : 'text-slate-600 dark:text-slate-300'}`}
+                >
+                  हिन्दी
+                </button>
+              </div>
+            )}
+          </div>
+          <p className="mt-5 whitespace-pre-line text-base leading-8 text-slate-700 dark:text-slate-200">{currentPassage}</p>
         </article>
 
         <aside className="rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm dark:border-slate-700 dark:bg-slate-900">
@@ -130,10 +157,10 @@ export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmit
           {currentSection.questions.map((question, questionIndex) => (
             <div key={question.id} className="rounded-2xl border border-slate-200 p-4 dark:border-slate-700">
               <p className="mb-3 text-base font-medium text-slate-800 dark:text-white">
-                {questionIndex + 1}. {question.question}
+                {questionIndex + 1}. {language === 'hindi' && question.questionHindi ? question.questionHindi : question.question}
               </p>
               <div className="grid gap-3">
-                {question.options.map((option, optionIndex) => {
+                {(language === 'hindi' && question.optionsHindi ? question.optionsHindi : question.options).map((option, optionIndex) => {
                   const selected = selectedAnswers[question.id] === optionIndex;
                   return (
                     <label
@@ -156,11 +183,6 @@ export default function StoryReaderPage({ stories, storage, isSignedIn, onSubmit
                   );
                 })}
               </div>
-              {question.explanation && (
-                <div className="mt-3 rounded-xl bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
-                  Hint: {question.explanation}
-                </div>
-              )}
             </div>
           ))}
         </div>

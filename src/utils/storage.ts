@@ -1,5 +1,7 @@
 const STORAGE_KEY = 'jain-story-learning';
 
+const getStorageKey = (username?: string) => username ? `${STORAGE_KEY}:${encodeURIComponent(username.trim().toLowerCase())}` : STORAGE_KEY;
+
 export type ThemeMode = 'light' | 'dark';
 
 export interface AppStorage {
@@ -18,9 +20,17 @@ const defaultStorage: AppStorage = {
   bestScores: {},
 };
 
-export const loadStorage = (): AppStorage => {
+export const loadStorage = (username?: string): AppStorage => {
+  const storageKey = getStorageKey(username);
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    let raw = localStorage.getItem(storageKey);
+    if (!raw && username) {
+      raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        localStorage.setItem(storageKey, raw);
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
     if (!raw) return defaultStorage;
     const parsed = JSON.parse(raw) as Partial<AppStorage>;
     return {
@@ -36,10 +46,10 @@ export const loadStorage = (): AppStorage => {
   }
 };
 
-export const saveStorage = (data: Partial<AppStorage>) => {
-  const current = loadStorage();
+export const saveStorage = (data: Partial<AppStorage>, username?: string) => {
+  const current = loadStorage(username);
   const next = { ...current, ...data };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+  localStorage.setItem(getStorageKey(username), JSON.stringify(next));
   return next;
 };
 
@@ -49,29 +59,29 @@ export const saveTheme = (theme: ThemeMode) => {
 
 export const getTheme = (): ThemeMode => loadStorage().theme;
 
-export const updateProgress = (storyId: string, progress: Record<string, any>) => {
-  const storage = loadStorage();
+export const updateProgress = (storyId: string, progress: Record<string, any>, username?: string) => {
+  const storage = loadStorage(username);
   storage.progress[storyId] = progress;
-  saveStorage({ progress: storage.progress });
+  saveStorage({ progress: storage.progress }, username);
 };
 
-export const completeStory = (storyId: string) => {
-  const storage = loadStorage();
+export const completeStory = (storyId: string, username?: string) => {
+  const storage = loadStorage(username);
   storage.completedStories[storyId] = true;
-  saveStorage({ completedStories: storage.completedStories });
+  saveStorage({ completedStories: storage.completedStories }, username);
 };
 
-export const addAttempt = (attempt: any) => {
-  const storage = loadStorage();
+export const addAttempt = (attempt: any, username?: string) => {
+  const storage = loadStorage(username);
   const nextAttempts = [attempt, ...storage.attempts].slice(0, 20);
-  saveStorage({ attempts: nextAttempts });
+  saveStorage({ attempts: nextAttempts }, username);
 };
 
-export const setBestScore = (storyId: string, score: number) => {
-  const storage = loadStorage();
+export const setBestScore = (storyId: string, score: number, username?: string) => {
+  const storage = loadStorage(username);
   const currentBest = storage.bestScores[storyId] ?? 0;
   if (score > currentBest) {
     storage.bestScores[storyId] = score;
-    saveStorage({ bestScores: storage.bestScores });
+    saveStorage({ bestScores: storage.bestScores }, username);
   }
 };

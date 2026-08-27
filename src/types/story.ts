@@ -4,7 +4,9 @@ export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
 export interface StoryQuestion {
   id: string;
   question: string;
+  questionHindi?: string;
   options: string[];
+  optionsHindi?: string[];
   correctAnswer: number;
   marks: number;
   difficulty: QuestionDifficulty;
@@ -15,6 +17,7 @@ export interface StorySection {
   id: string;
   title: string;
   passage: string;
+  passageHindi?: string;
   questions: StoryQuestion[];
 }
 
