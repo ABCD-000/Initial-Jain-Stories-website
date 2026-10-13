@@ -7,28 +7,25 @@ export const varishanMunirajStory: Story = {
   category: 'Jain Story',
   difficulty: 'intermediate',
   estimatedMinutes: 8,
+  source: 'https://encyclopediaofjainism.com/',
   sections: [
     {
       id: 'section-1',
       title: 'Story',
       passage: `The Story of Muniraj Varishan
 
-Once upon a time, Muniraj Varishan arrived at Palaskut village to accept food (Ahaar). Pushpadal, the son of a minister, offered him food and walked along with him for some distance to see him off. As they walked, the Muniraj took him along to his place. Since they were childhood friends, he preached to him about detachment (Vairagya) and initiated him into monkhood (Diksha).
+Once upon a time, Muniraj Varishan arrived at Palaskut village to accept food (Ahaarcharya). Pushpadal, the son of a minister, offered him food and walked along with him for some distance to see him off. The Muniraj took him along to his place. Furthermore, because they were childhood friends, he preached to him about detachment (Vairagya) and initiated him into monkhood (Diksha). However, Pushpadal Muniraj could not forget his wife. Slowly and gradually, twelve years passed.
 
-However, Pushpadal could not forget his wife. Slowly and gradually, twelve years passed. At one point, both the sages arrived in Rajgriha. Then, Pushpadal set out to meet his wife. Understanding his inner thoughts, Muniraj Varishan walked along with him, and they reached the royal palace.
+At one point, both the sages arrived in Rajgriha. Then, Pushpadal set out to meet his wife. Understanding his inner thoughts, Muniraj Varishan walked along with him, and they straight away reached his royal palace. Seeing her son Varishan return home, Queen Chelna felt a bit apprehensive and laid down two different types of seats. Muniraj Varishan sat on the wooden seat (Kasthasan) and said, "Mother! Call all my wives." They all arrived, and then Muniraj said, "Friend! These are my thirty-two wives, and this is my grandeur. You take this and enjoy it." At that very moment, Pushpadal attained true detachment.
 
-Seeing her son Varishan return home, Queen Chelna felt a little concerned and laid down two different types of seats. Muniraj Varishan sat on the wooden seat (Kasthasan) and said, “Mother! Call all my wives.” They all arrived, and then Muniraj said, “Friend! These are my thirty-two wives, and this is my grandeur. You take this and enjoy it.” At that very moment, Pushpadal attained true detachment.
-
-He said, “O Lord! You have abandoned this immense wealth like a blade of grass for the bliss of salvation (Moksha), and I, a fool, could not let go of my attachment to a single woman.” After that, upon reaching the forest, Varishan purified him through appropriate penance and re-established him firmly in the position of a monk. Then, Pushpadal also performed severe austerities and purified himself.`,
+He said, "O Lord! You have abandoned this immense wealth like a blade of grass for the bliss of salvation (Moksha), and I, a fool, could not let go of my attachment to a single woman." After that, upon reaching the forest, Varishan purified him through appropriate penance and re-established him firmly in the position of a monk. Then, Pushpadal also performed severe austerities and purified himself.`,
       passageHindi: `वारिषेण मुनिराज की कथा
 
-किसी समय वारिषेण मुनिराज पलासकूट ग्राम में आहारार्थ आए। मंत्रीपुत्र पुष्पडाल ने उन्हें आहार दिया और उनको पहुँचाने के लिए कुछ देर तक साथ चलने लगा। मुनिराज ने उसे अपने स्थान तक साथ ले जाकर अपने साथ रहने का मार्ग दिखाया। पुनः बचपन के मित्र होने से वैराग्य का उपदेश देकर दीक्षा दिला दी।
+किसी समय वारिषेण मुनिराज पलासकुट ग्राम में आहारार्थ आए। मंत्रीपुत्र पुष्पडाल ने उन्हें आहार दिया और उनको पहुँचाने के लिए कुछ देर तक साथ चलने लगा। मुनिराज उसे स्थान तक साथ ले जाए। पुनः बचपन के मित्र होने से वैराग्य का उपदेश देकर दीक्षा दिला दी। किन्तु पुष्पडाल मुनिराज अपनी स्त्री को नहीं भुला सके। धीरे-धीरे बारह वर्ष बीत गये।
 
-किन्तु पुष्पडाल मुनिराज अपनी स्त्री को नहीं भुला सके। धीरे-धीरे बारह वर्ष बीत गये। किसी समय ये दोनों साधु राजगृही आ गए। तब पुष्पडाल अपनी स्त्री से मिलने के लिए निकले। मुनिराज वारिषेण उनके अन्तरंग को समझकर साथ ही चल पड़े और वे सीधे अपने राजघराने में पहुँच गए।
+किसी समय ये दोनों साधु राजगृही आ गए। तब पुष्पडाल अपनी स्त्री से मिलने के लिए निकले। मुनिराज वारिषेण उनके अन्तरंग को समझकर साथ ही चल पड़े और वे सीधे अपने राजघराने में पहुँच गए। रानी चेलना ने वारिषेण पुत्र को घर आया देख कुछ शंकित होते हुए दो प्रकार के आसन लगा दिए। वारिषेण मुनिराज काष्ठासन पर बैठ गए और बोले माता ! सभी मेरी स्त्रियों को बुलाओ। वे सब आ गई, तब मुनिराज ने कहा- मित्र ! ये मेरी बत्तीस स्त्रियाँ हैं और यह वैभव है। तुम इसे ले लो, इसका उपभोग करो। उसी समय पुष्पडाल को वास्तविक वैराग्य हो गया।
 
-रानी चेलना ने वारिषेण पुत्र को घर आया देख कुछ शंकित होते हुए दो प्रकार के आसन लगा दिए। वारिषेण मुनिराज काष्ठासन पर बैठ गए और बोले- “माता! सभी मेरी स्त्रियों को बुलाओ।” वे सब आ गई, तब मुनिराज ने कहा- “मित्र! ये मेरी बत्तीस स्त्रियाँ हैं और यह वैभव है। तुम इसे ले लो, इसका उपभोग करो।” उसी समय पुष्पडाल को वास्तविक वैराग्य हो गया।
-
-उसने कहा- “प्रभो! आपने मोक्ष सुख के लिए इस अतुल वैभव को तृणवत् त्यागा है और मैं मूढ़ एक स्त्री के मोह को नहीं छोड़ सका।” अनन्तर वन में पहुँचकर वारिषेण ने उन्हें यथोचित प्रायश्चित्त से शुद्धकर वापस मुनिपद में स्थिर कर दिया। तब पुष्पडाल ने भी घोर तपश्चरण करके अपने आपको पवित्र बना लिया।`,
+उसने कहा- प्रभो ! आपने मोक्ष सुख के लिए इस अतुल वैभव को तृणवत् त्यागा है और मैं मूढ़ एक स्त्री के मोह को नहीं छोड़ सका। अनन्तर वन में पहुँचकर वारिषेण ने उन्हें यथोचित प्रायश्चित्त से शुद्धकर वापस मुनिपद में स्थिर कर दिया। तब पुष्पडाल ने भी घोर तपश्चरण करके अपने आपको पवित्र बना लिया।`,
       questions: [
         {
           id: 'q1',

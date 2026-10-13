@@ -3,14 +3,16 @@ import type { Story } from '../../types/story';
 import { anjanChorStory } from './anjanChor';
 import { anantmatiStory } from './anantmati';
 import { ahardaanStory } from './ahardaan';
+import { apneJaiseSabkePranStory } from './apneJaiseSabkePran';
 import { jinendrabhaktSethStory } from './jinendrabhaktSeth';
 import { revatiRaniStory } from './revatiRani';
 import { solahKaranStory } from './solahkaran';
 import { uddayanStory } from './uddayan';
+import { vajrakumarMunirajStory } from './vajrakumarMuniraj';
 import { varishanMunirajStory } from './varishanMuniraj';
 import { vishnukumarMunirajStory } from './vishnukumarMuniraj';
 
-export const storyLibrary: Story[] = [ahardaanStory, solahKaranStory, anjanChorStory, anantmatiStory, uddayanStory, revatiRaniStory, jinendrabhaktSethStory, varishanMunirajStory, vishnukumarMunirajStory];
+export const storyLibrary: Story[] = [ahardaanStory, solahKaranStory, anjanChorStory, anantmatiStory, uddayanStory, revatiRaniStory, jinendrabhaktSethStory, varishanMunirajStory, vishnukumarMunirajStory, vajrakumarMunirajStory, apneJaiseSabkePranStory];
 /*
   {
     id: 'queen-chelna-and-king-shrenik',

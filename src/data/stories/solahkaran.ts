@@ -7,6 +7,7 @@ export const solahKaranStory: Story = {
   category: 'Jain Story',
   difficulty: 'intermediate',
   estimatedMinutes: 10,
+  source: 'https://encyclopediaofjainism.com/',
   sections: [
     {
       id: 'section-1',

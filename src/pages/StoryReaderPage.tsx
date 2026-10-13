@@ -85,6 +85,14 @@ export default function StoryReaderPage({ stories, storage, username, isSignedIn
           </div>
         </div>
         <h1 className="text-3xl font-bold text-slate-800 dark:text-white">{story.title}</h1>
+        {story.source && (
+          <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+            Source:{' '}
+            <a href={story.source} target="_blank" rel="noreferrer" className="font-medium text-emerald-600 underline-offset-2 hover:underline">
+              {story.source}
+            </a>
+          </p>
+        )}
         <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-600 dark:text-slate-300">
           <span>{story.sections.length} sections</span>
           <span>{allQuestions.length} questions</span>

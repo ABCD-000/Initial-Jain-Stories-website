@@ -3,10 +3,11 @@ import type { Story } from '../../types/story';
 export const ahardaanStory: Story = {
   id: 'ahardaan-mahima-story',
   title: 'Story of Ahardaan Mahima',
-  description: 'Original story text provided by the user.',
+  description: 'A boy once considered unlucky becomes a symbol of how sacred food and compassion can transform destiny.',
   category: 'Jain Story',
   difficulty: 'intermediate',
   estimatedMinutes: 12,
+  source: 'https://encyclopediaofjainism.com/',
   sections: [
     {
       id: 'section-1',

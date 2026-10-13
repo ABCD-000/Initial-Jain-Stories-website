@@ -7,6 +7,7 @@ export const jinendrabhaktSethStory: Story = {
   category: 'Jain Story',
   difficulty: 'intermediate',
   estimatedMinutes: 8,
+  source: 'https://encyclopediaofjainism.com/',
   sections: [
     {
       id: 'section-1',

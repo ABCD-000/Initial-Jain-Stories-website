@@ -28,6 +28,7 @@ export interface Story {
   category: string;
   difficulty: Difficulty;
   estimatedMinutes: number;
+  source?: string;
   sections: StorySection[];
 }
 
