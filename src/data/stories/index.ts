@@ -3,6 +3,10 @@ import type { Story } from '../../types/story';
 import { anjanChorStory } from './anjanChor';
 import { anantmatiStory } from './anantmati';
 import { ahardaanStory } from './ahardaan';
+import { mangalTrayodashiStory } from './mangalTrayodashi';
+import { guruSamadhanStory } from './guruSamadhan';
+import { abhaydanMahimaStory } from './abhaydanMahima';
+import { veerGajkumarStory } from './veerGajkumar';
 import { indraVidyadharaStory } from './indraVidyadhara';
 import { apneJaiseSabkePranStory } from './apneJaiseSabkePran';
 import { jinendrabhaktSethStory } from './jinendrabhaktSeth';
@@ -13,7 +17,7 @@ import { vajrakumarMunirajStory } from './vajrakumarMuniraj';
 import { varishanMunirajStory } from './varishanMuniraj';
 import { vishnukumarMunirajStory } from './vishnukumarMuniraj';
 
-export const storyLibrary: Story[] = [ahardaanStory, solahKaranStory, anjanChorStory, anantmatiStory, uddayanStory, revatiRaniStory, jinendrabhaktSethStory, varishanMunirajStory, vishnukumarMunirajStory, vajrakumarMunirajStory, apneJaiseSabkePranStory, indraVidyadharaStory];
+export const storyLibrary: Story[] = [ahardaanStory, solahKaranStory, anjanChorStory, anantmatiStory, uddayanStory, revatiRaniStory, jinendrabhaktSethStory, varishanMunirajStory, vishnukumarMunirajStory, vajrakumarMunirajStory, apneJaiseSabkePranStory, indraVidyadharaStory, veerGajkumarStory, abhaydanMahimaStory, guruSamadhanStory, mangalTrayodashiStory];
 /*
   {
     id: 'queen-chelna-and-king-shrenik',
